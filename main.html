@@ -123,493 +123,224 @@
       border-radius: 10px;
       min-width: 200px;
     }
+    body {
+      background-color: black;
+    }
+
+    .heading {
+      text-align: center;
+      color: #00142b;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    #my-canvas {
+      margin-top: 50px;
+      margin-bottom: 30px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 63%;
+    }
+
+    .button {
+      width: 210px;
+      padding: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 10px;
+      display: inline-block;
+      background-color: rgb(126, 126, 126);
+      border-radius: 15px;
+      color: white;
+    }
+
+    .controls-button {
+      float: left;
+    }
   </style>
 
   <body>
-    <p>Press button to Stop Simulation before switching</p>
-    <div id="main_screen">
-      <button onclick="setTimeout(toggleIdle(),100)">Idle</button>
-      <button onclick="toggleForward()">Forward</button>
-      <button onclick="toggleKick()">Kick</button>
-      <button onclick="togglePunch()">Punch</button>
-      <button onclick="toggleBackward()">Backward</button>
-      <button onclick="toggleBlock()">Block</button>
-    </div>
-    <div id="main_screen">
-      <div
-        style="
-          width: 100%;
+    <h1 class="heading">Martial Arts Sim</h1>
+    <canvas id="my-canvas" width="1000px" height="500px"></canvas>
 
-          display: grid;
-          grid-template-columns: 0px 2fr;
-
-          grid-template-rows: 0px 1fr;
-        "
-        data-animate-effect="fadeInRight"
-      >
-        <div style="width: 500px" style="margin: 20px">
-          <div class="services color-5">
-            <div id="Idle">
-              <div class="slideshow-container">
-                <h2>Idle</h2>
-                <div class="mySlidesfr fade">
-                  <!-- <div class="numbertext">1 / 3</div> -->
-                  <img src="images/idle/1.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Text</div> -->
-                </div>
-
-                <div class="mySlidesfr fade">
-                  <!-- <div class="numbertext">2 / 3</div> -->
-                  <img src="images/idle/2.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Two</div> -->
-                </div>
-
-                <div class="mySlidesfr fade">
-                  <!-- <div class="numbertext">3 / 3</div> -->
-                  <img src="images/idle/3.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Three</div> -->
-                </div>
-              </div>
-              <div class="mySlidesfr fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/idle/4.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidesfr fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/idle/5.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidesfr fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/idle/6.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidesfr fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/idle/7.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-            </div>
-          </div>
-          <br />
-
-          <div style="text-align: center">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        <div style="width: 500px">
-          <div class="services color-5">
-            <div id="Kick">
-              <h2>Kick</h2>
-
-              <div class="slideshow-container">
-                <div class="mySlidesfv fade">
-                  <!-- <div class="numbertext">1 / 3</div> -->
-                  <img src="images/kick/1.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Text</div> -->
-                </div>
-
-                <div class="mySlidesfv fade">
-                  <!-- <div class="numbertext">2 / 3</div> -->
-                  <img src="images/kick/2.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Two</div> -->
-                </div>
-
-                <div class="mySlidesfv fade">
-                  <!-- <div class="numbertext">3 / 3</div> -->
-                  <img src="images/kick/3.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Three</div> -->
-                </div>
-              </div>
-              <div class="mySlidesfv fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/kick/4.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidesfv fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/kick/5.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidesfv fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/kick/6.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidesfv fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/kick/7.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-            </div>
-          </div>
-          <br />
-
-          <div style="text-align: center">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        <div style="width: 500px">
-          <div class="services color-5">
-            <div id="Punch">
-              <h2>Punch</h2>
-              <div class="slideshow-container">
-                <div class="mySlides fade">
-                  <!-- <div class="numbertext">1 / 3</div> -->
-                  <img src="images/punch/1.png" style="width: 100%" />
-                  <!-- <div class="text">Position 1</div> -->
-                </div>
-
-                <div class="mySlides fade">
-                  <!-- <div class="numbertext">2 / 3</div> -->
-                  <img src="images/punch/2.png" style="width: 100%" />
-                  <!-- <div class="text">Position 2</div> -->
-                </div>
-
-                <div class="mySlides fade">
-                  <!-- <div class="numbertext">3 / 3</div> -->
-                  <img src="images/punch/3.png" style="width: 100%" />
-                  <!-- <div class="text">Position 3</div> -->
-                </div>
-              </div>
-              <div class="mySlides fade">
-                <!-- <div class="numbertext">4 / 3</div> -->
-                <img src="images/punch/4.png" style="width: 100%" />
-                <!-- <div class="text">Position 4</div> -->
-              </div>
-              <div class="mySlides fade">
-                <!-- <div class="numbertext">5 / 3</div> -->
-                <img src="images/punch/5.png" style="width: 100%" />
-                <!-- <div class="text">Position 5</div> -->
-              </div>
-              <div class="mySlides fade">
-                <!-- <div class="numbertext">6 / 3</div> -->
-                <img src="images/punch/6.png" style="width: 100%" />
-                <!-- <div class="text">Position 6</div> -->
-              </div>
-              <div class="mySlides fade">
-                <!-- <div class="numbertext">7 / 3</div> -->
-                <img src="images/punch/7.png" style="width: 100%" />
-                <!-- <div class="text">Position 7</div> -->
-              </div>
-            </div>
-          </div>
-          <br />
-
-          <div style="text-align: center">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        <div style="width: 500px">
-          <div class="services color-5">
-            <div id="Backward">
-              <h2>Backward</h2>
-
-              <div class="slideshow-container">
-                <div class="mySlidesone fade">
-                  <!-- <div class="numbertext">1 / 3</div> -->
-                  <img src="images/backward/1.png" style="width: 100%" />
-                  <!-- <div class="text">Position 1</div> -->
-                </div>
-
-                <div class="mySlidesone fade">
-                  <!-- <div class="numbertext">2 / 3</div> -->
-                  <img src="images/backward/2.png" style="width: 100%" />
-                  <!-- <div class="text">Position 2</div> -->
-                </div>
-
-                <div class="mySlidesone fade">
-                  <!-- <div class="numbertext">3 / 3</div> -->
-                  <img src="images/backward/3.png" style="width: 100%" />
-                  <!-- <div class="text">Position 3</div> -->
-                </div>
-              </div>
-              <div class="mySlidesone fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/backward/4.png" style="width: 100%" />
-                <!-- <div class="text">Position 4</div> -->
-              </div>
-              <div class="mySlidesone fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/backward/5.png" style="width: 100%" />
-                <!-- <div class="text">Position 5</div> -->
-              </div>
-              <div class="mySlidesone fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/backward/6.png" style="width: 100%" />
-                <!-- <div class="text">Position 6</div> -->
-              </div>
-              <div class="mySlidesone fade" style="display: none">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/backward/7.png" style="width: 100%" />
-              </div>
-            </div>
-          </div>
-          <br />
-
-          <div style="text-align: center">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        <div style="width: 500px">
-          <div class="services color-5">
-            <div id="Block">
-              <h2>Block</h2>
-
-              <div class="slideshow-container">
-                <div class="mySlidestwo fade">
-                  <!-- <div class="numbertext">1 / 3</div> -->
-                  <img src="images/block/1.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Text</div> -->
-                </div>
-
-                <div class="mySlidestwo fade">
-                  <!-- <div class="numbertext">2 / 3</div> -->
-                  <img src="images/block/2.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Two</div> -->
-                </div>
-
-                <div class="mySlidestwo fade">
-                  <!-- <div class="numbertext">3 / 3</div> -->
-                  <img src="images/block/3.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Three</div> -->
-                </div>
-              </div>
-              <div class="mySlidestwo fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/block/4.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidestwo fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/block/5.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidestwo fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/block/6.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidestwo fade" style="display: none">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/block/7.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidestwo fade" style="display: none">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/block/8.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidestwo fade" style="display: none">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/block/9.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-            </div>
-          </div>
-          <br />
-
-          <div style="text-align: center">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        <div style="width: 500px">
-          <div class="services color-5">
-            <div id="Forward">
-              <h2>Forward</h2>
-
-              <div class="slideshow-container">
-                <div class="mySlidesthr fade">
-                  <!-- <div class="numbertext">1 / 3</div> -->
-                  <img src="images/forward/1.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Text</div> -->
-                </div>
-
-                <div class="mySlidesthr fade">
-                  <!-- <div class="numbertext">2 / 3</div> -->
-                  <img src="images/forward/2.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Two</div> -->
-                </div>
-
-                <div class="mySlidesthr fade">
-                  <!-- <div class="numbertext">3 / 3</div> -->
-                  <img src="images/forward/3.png" style="width: 100%" />
-                  <!-- <div class="text">Caption Three</div> -->
-                </div>
-              </div>
-              <div class="mySlidesthr fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/forward/4.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidesthr fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/forward/5.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidesthr fade">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/forward/6.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidesthr fade" style="display: none">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/forward/6.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidesthr fade" style="display: none">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/forward/6.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-              <div class="mySlidesthr fade" style="display: none">
-                <!-- <div class="numbertext">3 / 3</div> -->
-                <img src="images/block/6.png" style="width: 100%" />
-                <!-- <div class="text">Caption Three</div> -->
-              </div>
-            </div>
-          </div>
-          <br />
-
-          <div style="text-align: center">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-      </div>
+    <div class="controls-button">
+      <button class="button" id="kick">Kick (⬇)</button>
+      <button class="button" id="punch">Punch (⬆)</button>
+      <button class="button" id="forward">Forward (➡)</button>
+      <button class="button" id="backward">Backward (⬅)</button>
+      <button class="button" id="block">Block (Enter Key)</button>
+      <br />
+      <button class="button" id="fkick">Forward &amp; Kick (D)</button>
+      <button class="button" id="bkick">Backward &amp; Kick (A)</button>
+      <button class="button" id="fPunch">Forward &amp; Punch (W)</button>
+      <button class="button" id="bPunch">Backward &amp; Punch (S)</button>
     </div>
   </body>
   <script>
-    toggleKick();
-    toggleBackward();
-    toggleForward();
-    togglePunch();
-    toggleBlock();
-    toggleIdle();
-    function toggleKick() {
-      var x = document.getElementById("Kick");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-    function toggleBackward() {
-      var x = document.getElementById("Backward");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
+    // Getting Canvas
+    var c = document.getElementById("my-canvas");
+    var ctx = c.getContext("2d");
 
-    function togglePunch() {
-      var x = document.getElementById("Punch");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
+    // Function for load Image
+    let loadImage = (src, callback) => {
+      let img = document.createElement("img");
+      img.onload = () => callback(img);
+      img.src = src;
+    };
 
-    function toggleBlock() {
-      var x = document.getElementById("Block");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-    function toggleIdle() {
-      var x = document.getElementById("Idle");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
+    //Gets Image Path
+    let imagePath = (frameNumber, aniamtion) => {
+      return "images/" + aniamtion + "/" + frameNumber + ".png";
+    };
 
-    function toggleForward() {
-      var x = document.getElementById("Forward");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-    var slideIndex = 0;
-    showSlides();
+    // Defines Lists of all actions
+    let frames = {
+      idle: [1, 2, 3, 4, 5, 6, 7, 8],
+      kick: [1, 2, 3, 4, 5, 6, 7],
+      punch: [1, 2, 3, 4, 5, 6, 7],
+      forward: [1, 2, 3, 4, 5, 6],
+      backward: [1, 2, 3, 4, 5, 6],
+      block: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    };
 
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var mySlidesone = document.getElementsByClassName("mySlidesone");
-      var mySlidestwo = document.getElementsByClassName("mySlidestwo");
-      var mySlidesthr = document.getElementsByClassName("mySlidesthr");
+    // Loads Image Based On the Action Given
+    let loadImages = (callback) => {
+      let images = {
+        idle: [],
+        kick: [],
+        punch: [],
+        forward: [],
+        backward: [],
+        block: [],
+      };
+      let imagesToLoad = 0;
+      ["idle", "kick", "punch", "forward", "backward", "block"].forEach(
+        (animation) => {
+          let animationFrames = frames[animation];
 
-      var mySlidesfv = document.getElementsByClassName("mySlidesfv");
-      var mySlidesfr = document.getElementsByClassName("mySlidesfr");
+          imagesToLoad = imagesToLoad + animationFrames.length;
 
-      var dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-        mySlidesone[i].style.display = "none";
-        mySlidestwo[i].style.display = "none";
-        mySlidesthr[i].style.display = "none";
-        mySlidesfr[i].style.display = "none";
-        mySlidesfv[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      mySlidesone[slideIndex - 1].style.display = "block";
-      mySlidestwo[slideIndex - 1].style.display = "block";
-      mySlidesthr[slideIndex - 1].style.display = "block";
-      mySlidesfr[slideIndex - 1].style.display = "block";
-      mySlidesfv[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 200); // Change image every 2 seconds
-    }
+          animationFrames.forEach((frameNumber) => {
+            let path = imagePath(frameNumber, animation);
+
+            loadImage(path, (image) => {
+              images[animation][frameNumber - 1] = image;
+              imagesToLoad = imagesToLoad - 1;
+
+              if (imagesToLoad == 0) {
+                callback(images);
+              }
+            });
+          });
+        }
+      );
+    };
+
+    // Variable for X Coordinate
+    let x_cord = 10;
+
+    // Aniamtes the Action Given
+    let animate = (ctx, images, animation, callback) => {
+      images[animation].forEach((image, index) => {
+        setTimeout(() => {
+          ctx.clearRect(0, 0, 1000, 500);
+          var background = new Image();
+          background.src = "images/background.jpg";
+          ctx.drawImage(background, 0, 0, 1000, 500);
+          if (animation == "forward" && x_cord <= 568) {
+            x_cord += 10;
+          } else if (animation == "backward" && x_cord > 10) {
+            x_cord -= 10;
+          }
+          ctx.drawImage(image, x_cord, 85, 400, 400);
+        }, index * 100);
+      });
+      setTimeout(callback, images[animation].length * 100);
+    };
+
+    // Main Function for loading images based on key or button pressed
+    loadImages((images) => {
+      let queuedAnimations = [];
+
+      let aux = () => {
+        let selectedanimation;
+
+        if (queuedAnimations.length === 0) {
+          selectedanimation = "idle";
+        } else {
+          selectedanimation = queuedAnimations.shift();
+        }
+
+        animate(ctx, images, selectedanimation, aux);
+      };
+
+      aux();
+
+      document.getElementById("kick").onclick = () => {
+        queuedAnimations.push("kick");
+      };
+
+      document.getElementById("punch").onclick = () => {
+        queuedAnimations.push("punch");
+      };
+
+      document.getElementById("forward").onclick = () => {
+        queuedAnimations.push("forward");
+      };
+
+      document.getElementById("backward").onclick = () => {
+        queuedAnimations.push("backward");
+      };
+
+      document.getElementById("block").onclick = () => {
+        queuedAnimations.push("block");
+      };
+
+      document.getElementById("fkick").onclick = () => {
+        queuedAnimations.push("forward");
+        queuedAnimations.push("kick");
+      };
+      document.getElementById("fPunch").onclick = () => {
+        queuedAnimations.push("forward");
+        queuedAnimations.push("punch");
+      };
+      document.getElementById("bPunch").onclick = () => {
+        queuedAnimations.push("backward");
+        queuedAnimations.push("punch");
+      };
+      document.getElementById("bkick").onclick = () => {
+        queuedAnimations.push("backward");
+        queuedAnimations.push("kick");
+      };
+
+      document.addEventListener("keyup", (event) => {
+        const key = event.key;
+
+        if (key == "ArrowDown") {
+          queuedAnimations.push("kick");
+        } else if (key == "ArrowUp") {
+          queuedAnimations.push("punch");
+        } else if (key == "ArrowRight") {
+          queuedAnimations.push("forward");
+        } else if (key == "ArrowLeft") {
+          queuedAnimations.push("backward");
+        } else if (key == "Enter") {
+          queuedAnimations.push("block");
+        } else if (key == "D" || key == "d") {
+          queuedAnimations.push("forward");
+          queuedAnimations.push("kick");
+        } else if (key == "w" || key == "W") {
+          queuedAnimations.push("forward");
+          queuedAnimations.push("punch");
+        } else if (key == "a" || key == "A") {
+          queuedAnimations.push("backward");
+          queuedAnimations.push("kick");
+        } else if (key == "s" || key == "S") {
+          queuedAnimations.push("backward");
+          queuedAnimations.push("punch");
+        }
+      });
+    });
   </script>
 </html>
